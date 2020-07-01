@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--
+<a download href="dwTest.html">
+  Download Fonts
+</a>
+-->
+
+
+<button onclick="myFunction()">Click me</button>
+<script>
+function myFunction() {
+   //var fileContent = 'This is sample text file key1 key2';
+   var fileName = 'test.html';
+   
+   //
+   fileContent = fileContent.replace("key1", "Hi");
+   fileContent = fileContent.replace("key2", "Noah");
+   
+   const blob = new Blob([fileContent], { type: 'text/plain' });
+   const a = document.createElement('a');
+   a.setAttribute('download', fileName);
+   a.setAttribute('href', window.URL.createObjectURL(blob));
+   a.click();
+}
+</script>
+
+
+</body>
+</html>
